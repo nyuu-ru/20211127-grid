@@ -99,9 +99,17 @@ public class GridPanel extends JPanel {
                 int x = (int)(colSize * col);
                 int y = (int)(rowSize * row);
                 if (filled)
-                    g2d.fillOval(x, y, (int)colSize, (int)rowSize);
+                    g2d.fillOval(
+                            x + lineWidth,
+                            y + lineWidth,
+                            (int)colSize - lineWidth*2,
+                            (int)rowSize - lineWidth*2);
                 else
-                    g2d.drawOval(x, y, (int)colSize, (int)rowSize);
+                    g2d.drawOval(
+                            x + lineWidth,
+                            y + lineWidth,
+                            (int)colSize - lineWidth*2,
+                            (int)rowSize - lineWidth*2);
             }
     }  
     
